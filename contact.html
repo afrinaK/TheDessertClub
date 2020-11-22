@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="log">
+        <img src="logo.png" alt="" style="margin-top: 30px;">
+        
+        <h1 class="hd">The Dessert Club</h1>
+        <p>Chase the flavours</p>
+    </section>
+    <nav style="font-size:18px;font-weight: 500;">
+        <ul>
+            <li><a href="index.html">Home <span></span><span></span><span></span><span></span> </a></li>
+            
+            <li><a href="About.html">About <span></span><span></span><span></span><span></span> </a></li>
+            <li><a href="blog.html">Blog <span></span><span></span><span></span><span></span> </a></li>
+            <li><a href="contact.html">Contact Us! <span></span><span></span><span></span><span></span> </a></li>
+        </ul>
+    </nav>
+
+    <h1 style="padding-left: 560px;font-size: 47px;font-weight: 300;padding-top: 20px;padding-bottom: 30px;">
+        Contact Us!
+    </h1>
+
+    <div class="conbox">
+        <img src="con1.jpeg" alt="" style="width: 1350px;">
+    </div>
+
+    <p style="padding-left: 250px;padding-top: 30px;font-size: 21px;">Don’t hesitate to reach out with the contact information below, or send a message</p> <<p style="font-size: 22px;padding-top: 5px;padding-left: 260px;">using the form.We hope to reach you within 24 hours.Happy shopping!</p>
+
+    <h1 style="padding-left: 530px;padding-top: 40px;padding-bottom: 30px;">Send Us a Message</h1>
+    <!-- <div class="form" style="font-size: 21px;font-weight: 600;height: 600px;">
+        Name(required)<br><input type="text" name="Full Name" id="userFullName"style="height: 50px;width: 450px;"><br><br>
+        Email(required)<br><input type="Email" name="Email" id="userEmail" style="height: 50px;width: 450px;"><br><br>
+        Message<br><textarea name="Message" id="userMessage" style="width: 450px;height: 200px;"></textarea><br><br>
+        Name and Amount<br><textarea name="text"  id="userAmount"style="width: 450px;height: 200px;"><br><br>
+        <button class="btn btn-primary" id="submit"style="font-size: 19px;font-weight: 600;background-color: rgba(120, 66, 18, 0.822);margin-right: 260px;">Submit</button>
+    </div> -->
+
+    <div class="form" style="font-size: 21px;font-weight: 600;height: 600px;">
+        Name(required)<br><input type="text" name="fname" style="height: 50px;width: 450px;"><br><br>
+        Email(required)<br><input type="text" name="mname" style="height: 50px;width: 450px;"><br><br>
+        Message<br><input type="text" name="mname" style="width: 450px;height: 200px;"><br><br>
+        <button class="btn" style="font-size: 19px;font-weight: 600;background-color: rgba(120, 66, 18, 0.822);margin-right: 260px;">Submit</button>
+    </div>
+
+
+<!-- ======= Comment Section ======= -->
+
+<!-- ======= Comment Section ======= -->
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+
+
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA8_i28wizN3jgP4TKNDrvmo_Q9CJf-Zww",
+    authDomain: "comments-bd7ab.firebaseapp.com",
+    databaseURL: "https://comments-bd7ab.firebaseio.com",
+    projectId: "comments-bd7ab",
+    storageBucket: "comments-bd7ab.appspot.com",
+    messagingSenderId: "466141254700",
+    appId: "1:466141254700:web:92d44264de5e187d932d89"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const rootRef=firebase.database().ref();
+
+  const commentsRef= rootRef.child('comments');
+  document.getElementById('btnSubmitComment').addEventListener('click',function(){
+      var newcomment= document.getElementById('txComment').value.replace(/\n/g,"<br>")
+      var newPostRef=commentsRef.push();
+      newPostRef.set({
+          name:docment.getElementById('tbName').value.trim(),
+          comment: newcomment.trim(),
+          frompage: location.pathname,
+          when: firebase.database.ServerValue.TIMESTAMP
+      });
+ });
+</script>
+
+  
+
+<script src="app.js"></script>
+
+
+<div class="end">
+    <div class="footer-content">
+    <div class="footer-section about"></div>
+    <h1 style="padding-left: 500px;padding-top: 25px;">The Dessert Club</h1>
+    <p style="padding-left: 200px;padding-top: 20px;">If you are a sweet lover then our page is your go to go.So,hurry up and place your order now! you can also follow us on social media pages.</p>
+    <table>
+        <tr>
+            <td style="padding-left:100px;padding-right: 100px;">
+                <h1>Open Hours</h1>
+                        Mon – Sat: 10:00 am – 8:00 pm <br>
+                        Sun: 12:00 pm – 6:00 pm
+                        
+            </td>
+            <td style="padding-left: 100px;padding-right: 300px;padding-top:40px;">
+                <h1>Location</h1>
+                        Dhaka Cantonment ,<br>
+                        Dhaka-1206, BANGLADESH <br>
+                        Reservation
+            </td>
+            <td>
+                <h1>Reservation</h1>
+                        01985369673 <br>
+                        khanaKhazana401@gmail.com
+            </td>
+        </tr>
+    </table>
+    <div class="contact" style="padding-left: 500px;padding-top: 20px;">
+        <span><i class="fas fa-phone"></i> &nbsp;123-456-789</span>
+        <span><i class="fas envelope"></i> &nbsp;dessertClub class.com</span>
+        
+    </div>       
+
+
+</body>
+
+
+   
