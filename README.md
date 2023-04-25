@@ -1,3 +1,3 @@
 # TheDessertClub.github.io
 
-![Alt text](covers/Screenshot (274).png)
+![Alt text](https://github.com/afrinaK/TheDessertClub.github.io/blob/master/covers/Screenshot%20(274).png?raw=true)
